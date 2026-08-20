@@ -1,0 +1,78 @@
+name: Bug report
+description: Report a reproducible defect using sanitized information.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a problem. Do not upload real payment-card media,
+        unredacted screenshots, OCR transcripts, recognized values, credentials,
+        or private filesystem paths. Report vulnerabilities privately through the
+        Security tab instead.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Privacy checklist
+      options:
+        - label: I removed payment values, private paths, credentials, and personal data.
+          required: true
+        - label: This is not a security vulnerability.
+          required: true
+        - label: I searched existing issues for this problem.
+          required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: 0.1.0 or commit SHA
+    validations:
+      required: true
+  - type: dropdown
+    id: interface
+    attributes:
+      label: Interface
+      options:
+        - CLI
+        - HTTP API
+        - Acceptance runner
+        - Python API
+        - Docker
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, CPU architecture, Python version, FFmpeg version, and installation method.
+      placeholder: macOS arm64, Python 3.13, FFmpeg 8, source install with uv
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Sanitized reproduction
+      description: Prefer a generated synthetic-corpus scenario or value-free fixture.
+      placeholder: Commands and minimal generated inputs needed to reproduce the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include only sanitized status, counts, exit codes, and error codes.
+    validations:
+      required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional sanitized context
+      description: Do not attach private recordings or unredacted frames.

@@ -1,0 +1,24 @@
+.git
+.DS_Store
+.env
+.env.*
+.venv
+__pycache__
+.pytest_cache
+.ruff_cache
+.mypy_cache
+.hypothesis
+.coverage
+.coverage.*
+build
+dist
+tests
+docs
+benchmarks
+.github
+Video Card Redaction Engine — V1 Build Specification.md
+*.mp4
+*.mov
+*.m4v
+*.avi
+*.mkv

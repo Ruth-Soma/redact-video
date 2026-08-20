@@ -1,0 +1,71 @@
+redaction:
+  policy: card_details
+  blur:
+    mode: privacy_blur
+    gaussian_sigma: 8
+    min_padding_px: 6
+    padding_ratio: 0.004
+    pixel_block_size: 12
+
+detection:
+  scan_fps: 8
+  safe_scan_fps: 12
+  thresholds:
+    card_number: 0.72
+    expiry: 0.70
+    cvv: 0.68
+    saved_card: 0.70
+
+tracking:
+  sticky_duration_ms: 350
+  reacquire_interval_ms: 500
+  use_apple_vision_acceleration: true
+  overlap_source_ocr_and_tracking: true
+  authoritative_audit_interval_ms: 350
+  reuse_authoritative_frames: true
+  authoritative_reuse_pixel_delta: 6
+  authoritative_reuse_max_changed_pixels: 64
+  authoritative_reuse_max_changed_fraction: 0.00002
+  maximum_flow_points: 40
+  optical_flow_workers: 4
+  parallel_flow_min_frame_pixels: 1000000
+  flow_pyramid_levels: 3
+
+verification:
+  enabled: true
+  max_passes: 3
+  reuse_clean_frames: true
+  reuse_clean_frames_across_passes: true
+  selective_cross_pass_decode: true
+  reuse_guard_max_dimension: 96
+  reuse_pixel_delta: 12
+  reuse_max_changed_pixels: 64
+  reuse_max_changed_fraction: 0.005
+  minimum_scan_interval_ms: 100
+  immediate_scene_change_fraction: 0.20
+  reuse_max_interval_ms: 500
+  use_apple_vision_acceleration: true
+  authoritative_audit_interval_ms: 500
+  prefetch_authoritative_audits: true
+  authoritative_prefetch_frames: 12
+  authoritative_prefetch_max_bytes: 134217728
+  repair_pre_roll_ms: 350
+  repair_post_roll_ms: 500
+
+output:
+  codec: h264
+  crf: 18
+  preset: veryfast
+  preserve_audio: true
+
+ocr:
+  ocr_version: PP-OCRv6
+  text_detection_model_name: PP-OCRv6_tiny_det
+  text_recognition_model_name: PP-OCRv6_tiny_rec
+  inference_engine: onnxruntime
+  max_input_dimension: 1920
+  apple_vision_max_input_dimension: 1440
+  apple_vision_recognition_level: fast
+  apple_vision_full_resolution_fallback: false
+  text_detection_limit_side_length: 832
+  full_resolution_fallback: true

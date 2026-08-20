@@ -1,0 +1,54 @@
+name: Feature request
+description: Propose a focused improvement to Video Redactor.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the use case without including payment-card media, recognized
+        values, personal data, credentials, or private paths.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Initial checks
+      options:
+        - label: I searched existing issues and the roadmap.
+          required: true
+        - label: This request can be discussed without private or sensitive data.
+          required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user problem should the project solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Explain the desired public interface and privacy expectations.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - OCR and detection
+        - Tracking
+        - Rendering
+        - Verification and repair
+        - CLI and configuration
+        - HTTP API
+        - Performance
+        - Documentation
+        - Packaging and deployment
+    validations:
+      required: true
