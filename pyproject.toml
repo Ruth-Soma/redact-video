@@ -61,7 +61,7 @@ dev = [
   "python-multipart>=0.0.9,<1",
   "pytest>=8,<9",
   "pytest-cov>=5,<7",
-  "ruff>=0.16,<0.17",
+  "ruff>=0.16,<0.18",
 ]
 
 [project.scripts]
