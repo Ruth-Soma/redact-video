@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.15-slim
 
 LABEL org.opencontainers.image.title="video-redactor" \
       org.opencontainers.image.description="Headless payment-card video redaction"
